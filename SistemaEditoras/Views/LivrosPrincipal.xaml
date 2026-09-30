@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:SistemaEditoras.Models"
+             x:Class="SistemaEditoras.Views.LivrosPrincipal"
+             Title=":: LIVROS ::..">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="15" RowSpacing="10">
+
+        <Entry x:Name="EntryPesquisar"
+               Grid.Row="0"
+               Placeholder="Pesquisar por nome..."
+               TextChanged="OnPesquisarTextChanged" />
+
+        <CollectionView x:Name="ColecaoLivros"
+                        Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="8" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.EmptyView>
+                <Label Text="Nenhum livro cadastrado."
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="Gray" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Livro">
+                    <Grid ColumnDefinitions="*,Auto,Auto"
+                          Padding="10"
+                          BackgroundColor="#F2F2F2">
+                        <VerticalStackLayout Grid.Column="0" Spacing="2" VerticalOptions="Center">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" />
+                            <Label Text="{Binding AutorNome}" FontSize="12" TextColor="Gray" />
+                            <Label Text="{Binding EditoraNome}" FontSize="12" TextColor="Gray" />
+                        </VerticalStackLayout>
+
+                        <Button Grid.Column="1"
+                                Text="Alterar"
+                                FontSize="12"
+                                Clicked="OnAlterarClicked"
+                                CommandParameter="{Binding .}" />
+
+                        <Button Grid.Column="2"
+                                Text="Excluir"
+                                FontSize="12"
+                                BackgroundColor="#B00020"
+                                TextColor="White"
+                                Clicked="OnExcluirClicked"
+                                CommandParameter="{Binding .}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="2"
+                Text="Inserir"
+                Clicked="OnInserirClicked" />
+
+    </Grid>
+
+</ContentPage>

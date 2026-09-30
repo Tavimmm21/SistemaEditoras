@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaEditoras.Views.DesenvolvedorPage"
+             Title="Dados do Desenvolvedor">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="16" VerticalOptions="Center">
+
+            <Image Source="dotnet_bot.png"
+                   HeightRequest="90"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Sistema Editoras"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Vitor Augusto Sant'Anna"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="RA: 2532380"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+            <Frame BackgroundColor="#FFF59D"
+                   Padding="12"
+                   HasShadow="False"
+                   CornerRadius="8"
+                   HorizontalOptions="Center">
+                <Label Text="Data da Avaliação: 30/09/2026"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+            <Button Text="Home"
+                    Clicked="OnHomeClicked"
+                    Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

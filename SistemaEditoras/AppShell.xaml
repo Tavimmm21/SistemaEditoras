@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SistemaEditoras.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SistemaEditoras"
+    xmlns:views="clr-namespace:SistemaEditoras.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True"
+    Title="Sistema Editoras">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#512BD4" HeightRequest="140" Padding="20">
+            <VerticalStackLayout VerticalOptions="Center" Spacing="4">
+                <Label Text="📚 Sistema Editoras"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="White" />
+                <Label Text="Gestão de Editoras, Livros e Autores"
+                       FontSize="13"
+                       TextColor="White" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="20,12" BackgroundColor="#EEEEEE">
+            <Label Text="Versão 1.0 • Projeto Acadêmico"
+                   FontSize="12"
+                   HorizontalOptions="Center"
+                   TextColor="Gray" />
+        </Grid>
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Title="Menu Principal" FlyoutDisplayOptions="AsMultipleItems">
+
+        <Tab Title="Home">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Editoras">
+            <ShellContent
+                Title="Editoras"
+                ContentTemplate="{DataTemplate views:EditorasPrincipal}"
+                Route="EditorasPrincipal" />
+        </Tab>
+
+        <Tab Title="Livros">
+            <ShellContent
+                Title="Livros"
+                ContentTemplate="{DataTemplate views:LivrosPrincipal}"
+                Route="LivrosPrincipal" />
+        </Tab>
+
+        <Tab Title="Autores">
+            <ShellContent
+                Title="Autores"
+                ContentTemplate="{DataTemplate views:AutoresPrincipal}"
+                Route="AutoresPrincipal" />
+        </Tab>
+
+        <Tab Title="Dev">
+            <ShellContent
+                Title="Dev"
+                ContentTemplate="{DataTemplate views:DesenvolvedorPage}"
+                Route="DesenvolvedorPage" />
+        </Tab>
+
+    </FlyoutItem>
+
+</Shell>

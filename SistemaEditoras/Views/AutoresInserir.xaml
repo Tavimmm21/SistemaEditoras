@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaEditoras.Views.AutoresInserir"
+             Title=":: AUTOR - INSERIR ::..">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label Text="Nome" FontAttributes="Bold" />
+            <Entry x:Name="EntryNome" Placeholder="Nome do autor" />
+
+            <Label Text="Pseudônimo" FontAttributes="Bold" />
+            <Entry x:Name="EntryPseudonimo" Placeholder="Pseudônimo (opcional)" />
+
+            <Label Text="Observações" FontAttributes="Bold" />
+            <Editor x:Name="EditorObservacoes" HeightRequest="100" Placeholder="Observações (opcional)" />
+
+            <Button Text="Salvar"
+                    Clicked="OnSalvarClicked"
+                    Margin="0,20,0,0" />
+
+            <Button Text="Voltar"
+                    Clicked="OnVoltarClicked"
+                    BackgroundColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

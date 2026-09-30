@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaEditoras.Views.LivrosInserir"
+             Title=":: LIVRO - INSERIR ::..">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label Text="Nome" FontAttributes="Bold" />
+            <Entry x:Name="EntryNome" Placeholder="Nome do livro" />
+
+            <Label Text="Ano de Publicação" FontAttributes="Bold" />
+            <Entry x:Name="EntryAnoPublicacao" Placeholder="Ex: 2024" Keyboard="Numeric" />
+
+            <Label Text="ISBN" FontAttributes="Bold" />
+            <Entry x:Name="EntryIsbn" Placeholder="Somente números" Keyboard="Numeric" />
+
+            <Label Text="Editora" FontAttributes="Bold" />
+            <Picker x:Name="PickerEditora" Title="Selecione a editora" />
+
+            <Label Text="Autor" FontAttributes="Bold" />
+            <Picker x:Name="PickerAutor" Title="Selecione o autor" />
+
+            <Label Text="Observações" FontAttributes="Bold" />
+            <Editor x:Name="EditorObservacoes" HeightRequest="100" Placeholder="Observações (opcional)" />
+
+            <Button Text="Salvar"
+                    Clicked="OnSalvarClicked"
+                    Margin="0,20,0,0" />
+
+            <Button Text="Voltar"
+                    Clicked="OnVoltarClicked"
+                    BackgroundColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
